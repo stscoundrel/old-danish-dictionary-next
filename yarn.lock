@@ -5110,6 +5110,11 @@ object.values@^1.1.6, object.values@^1.1.7:
     define-properties "^1.2.0"
     es-abstract "^1.22.1"
 
+old-danish-dictionary@^0.1.0:
+  version "0.1.0"
+  resolved "https://registry.yarnpkg.com/old-danish-dictionary/-/old-danish-dictionary-0.1.0.tgz#81c345bac6c3175d754c33436ab4015ea0b5600d"
+  integrity sha512-T7cbmv5z2U7On0u26I/g0AF2KrUIR2H9VKMgBQTMd4aJwX1DXAfOL7+0ZfA36+2DepfOz/SriNOmlixoT5BzQA==
+
 once@^1.3.0:
   version "1.4.0"
   resolved "https://registry.yarnpkg.com/once/-/once-1.4.0.tgz#583b1aa775961d4b113ac17d9c50baef9dd76bd1"

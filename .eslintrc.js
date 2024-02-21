@@ -9,7 +9,6 @@ module.exports = {
       node: true,
       es2020: true,
       jest: true,
-      'cypress/globals': true,
     },
     parserOptions: {
       ecmaVersion: 2020,
@@ -22,7 +21,6 @@ module.exports = {
       'import',
       'react',
       'jest',
-      'cypress',
       '@typescript-eslint',
     ],
     parser: '@typescript-eslint/parser',
