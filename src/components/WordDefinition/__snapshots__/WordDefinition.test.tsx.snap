@@ -1,0 +1,211 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`WordDefinition component Matches snapshot 1`] = `
+<article
+  className="section"
+>
+  <header>
+    <h1
+      lang="non"
+    >
+      Abe
+    </h1>
+    <small
+      className="subHeading"
+    >
+      Old Danish Dictionary - 
+      abe
+    </small>
+    <p>
+      Meaning of Old Danish word 
+      <em>
+        "
+        Abe
+        "
+      </em>
+      , as defined by Otto Kalkar's Dictionary of Old Danish language.
+    </p>
+  </header>
+  <p>
+    The Old Danish word 
+    <strong>
+      <dfn
+        className="capitalize"
+      >
+        Abe
+      </dfn>
+    </strong>
+     can mean:
+  </p>
+  <ul
+    className="definitionList"
+  >
+    <li
+      className="definitionItem"
+      dangerouslySetInnerHTML={
+        {
+          "__html": "<abbr title="navneord (substantivum).">no.</abbr>",
+        }
+      }
+      lang="swe"
+    />
+    <li
+      className="definitionItem"
+      dangerouslySetInnerHTML={
+        {
+          "__html": "1) dyrenavn, <abbr title="hunkøn (femininum).">hunk.</abbr> (cv <abbr title="svensk.">sv.</abbr> apa.); som aben tit skeer, naar hun vil gøre effter det, hun seer. Herm. ' Weigere. 215, 228%; lige som man ick kunde aben kende, naar hun sig før i Aarons klæder. Ranch. 29; løb løss en tam abe, der mand lockede ad hende. Hvitf VIL 1; aben, som bilder sig ind, at hendis børn er altijd de smuckeste. S. Terkelsen, Astreæ Sjungek. IL. for<abbr title="tysk.">t.</abbr> —",
+        }
+      }
+      lang="swe"
+    />
+    <li
+      className="definitionItem"
+      dangerouslySetInnerHTML={
+        {
+          "__html": "2) fjfr. <abbr title="islandsk.">isl.</abbr> api.) dåre; wthen han seer ther tijl ful- breth, tha holles han forenabe., Rimkr. p%; giør du Joab, Herre, til din abe, at hans anslag ey due. Ranch. 95; en nar, den, som holder for- meget af sine bør<abbr title="norsk.">n.</abbr> Moth.",
+        }
+      }
+      lang="swe"
+    />
+  </ul>
+  <p>
+    Possible runic inscription in 
+    <em>
+      Medieval Futhork
+    </em>
+    :
+    <span
+      className="rune"
+    >
+      ᛆᛒᚽ
+    </span>
+    <br />
+    <small>
+      Medieval Runes were used in Denmark from 12th to 17th centuries.
+    </small>
+  </p>
+  <h4>
+    Similar entries:
+  </h4>
+  <ul>
+    <li>
+      <a
+        className="link"
+        href="/word/abe"
+        onClick={[Function]}
+        onMouseEnter={[Function]}
+        onTouchStart={[Function]}
+      >
+        Abe (I)
+      </a>
+    </li>
+  </ul>
+  <div
+    className="abbreviations"
+  >
+    <div
+      className="column"
+    >
+      <h4>
+        Abbreviations used:
+      </h4>
+      <dl
+        className="wrap"
+      >
+        <dt
+          className="abbreviation"
+        >
+          <strong>
+            no.
+          </strong>
+        </dt>
+        <dd
+          className="explanation"
+        >
+          navneord (substantivum).
+        </dd>
+      </dl>
+      <dl
+        className="wrap"
+      >
+        <dt
+          className="abbreviation"
+        >
+          <strong>
+            hunk.
+          </strong>
+        </dt>
+        <dd
+          className="explanation"
+        >
+          hunkøn (femininum).
+        </dd>
+      </dl>
+      <dl
+        className="wrap"
+      >
+        <dt
+          className="abbreviation"
+        >
+          <strong>
+            sv.
+          </strong>
+        </dt>
+        <dd
+          className="explanation"
+        >
+          svensk.
+        </dd>
+      </dl>
+      <dl
+        className="wrap"
+      >
+        <dt
+          className="abbreviation"
+        >
+          <strong>
+            t.
+          </strong>
+        </dt>
+        <dd
+          className="explanation"
+        >
+          tysk.
+        </dd>
+      </dl>
+      <dl
+        className="wrap"
+      >
+        <dt
+          className="abbreviation"
+        >
+          <strong>
+            isl.
+          </strong>
+        </dt>
+        <dd
+          className="explanation"
+        >
+          islandsk.
+        </dd>
+      </dl>
+      <dl
+        className="wrap"
+      >
+        <dt
+          className="abbreviation"
+        >
+          <strong>
+            n.
+          </strong>
+        </dt>
+        <dd
+          className="explanation"
+        >
+          norsk.
+        </dd>
+      </dl>
+    </div>
+  </div>
+</article>
+`;

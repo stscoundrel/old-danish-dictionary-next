@@ -1,11 +1,6 @@
 import { findAbbreviations } from 'old-danish-dictionary'
-import { abbreviate } from 'abbreviatrix'
 import { OriginalDictionaryEntry } from 'lib/models/dictionary'
-
-export interface Abbreviation{
-    abbreviation: string,
-    explanation: string
-}
+import { Abbreviation } from './model'
 
 export const getAbbreviations = ({ definitions }: OriginalDictionaryEntry): Abbreviation[] => {
   const combinedAbbreviations: Abbreviation[] = []
@@ -24,18 +19,4 @@ export const getAbbreviations = ({ definitions }: OriginalDictionaryEntry): Abbr
   return combinedAbbreviations;
 }
 
-/**
- * Add abbr tags to content with explanations.
- */
-export const addAbbreviationsToContent = (
-  content: string,
-  abbreviations: Abbreviation[],
-): string => {
-  let result = content
-
-  abbreviations.forEach(({ abbreviation, explanation }) => {
-    result = abbreviate(abbreviation, explanation, result)
-  })
-
-  return result
-}
+export default getAbbreviations;
