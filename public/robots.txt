@@ -1,0 +1,9 @@
+# *
+User-agent: *
+Allow: /
+
+# Host
+Host: https://old-danish-dictionary.vercel.app
+
+# Sitemaps
+Sitemap: https://old-danish-dictionary.vercel.app/sitemap.xml
