@@ -30,7 +30,6 @@ describe('Abbreviations tests', () => {
 
     const result = addAbbreviationsToContent(entry.definitions[0], abbreviations)
     const expected = '<abbr title="navneord (substantivum).">no.</abbr> (<abbr title="islandsk.">isl.</abbr> apaldr.) æbletræ; then frucht, som paa then abildhæ staar. Hr. Michael. 134; malus, abild eller ebletr<abbr title="ældre.">æ.</abbr> Vocab. 1514; tree ymper abbele, perer eller andre gode trær (1587). Rosenv., Gl L. IV. 186 = Chr. V. D. L. 3-18-18; fruet- træer, som abile, pærer. A. Bernt-se<abbr title="norsk.">n.</abbr> I. 309.'
-    console.log(result)
     expect(result).toEqual(expected)
   })
 })
