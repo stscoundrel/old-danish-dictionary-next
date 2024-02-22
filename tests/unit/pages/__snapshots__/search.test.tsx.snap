@@ -1,6 +1,6 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`Index page Matches snapshot 1`] = `
+exports[`Search page: render Matches snapshot 1`] = `
 [
   <header>
     <div
@@ -423,66 +423,84 @@ exports[`Index page Matches snapshot 1`] = `
   <main
     className="container"
   >
-    <section
-      className="section"
+    <form
+      className="form"
+      onSubmit={[Function]}
     >
       <h1
-        className="h2"
-      >
-        Old Danish Dictionary
-      </h1>
-      <p>
-        Online version of the "
-        <em>
-          Ordbog til det ældre danske Sprog
-        </em>
-        ", the dictionary of Old Danish by Otto Kalkar.
-      </p>
-      <p>
-        The dictionary contains over 45 000 translations from Old Danish to Danish. This is the largest dictionary of the language.
-      </p>
-      <a
-        className="button"
-        href="/search"
-        onClick={[Function]}
-        onMouseEnter={[Function]}
-        onTouchStart={[Function]}
-      >
-        Search the dictionary
-      </a>
-    </section>
-    <section
-      className="section"
-    >
-      <h2
         className="h3"
       >
-        What is Old Danish?
-      </h2>
-      <p>
-        Old Danish was a language spoken in Denmark from year 800 to 1525. It represents the middle stages between Old East Norse (language of the Vikings) and modern Danish.
-      </p>
-      <p>
-        Old Danish can further be divided into:
-      </p>
-      <ul>
-        <li>
-          - Runic Danish 800 - 1100 (olddansk in Danish)
+        Search
+      </h1>
+      <input
+        className="input"
+        name="search"
+        onChange={[Function]}
+        type="search"
+        value=""
+      />
+      <ul
+        className="list"
+      >
+        <p>
+          Search from:
+        </p>
+        <li
+          className="listItem"
+        >
+          <input
+            checked={true}
+            name="all"
+            onChange={[Function]}
+            type="radio"
+            value="criteria"
+          />
+           Everything
         </li>
-        <li>
-          - Early Middle Danish 1100 - 1350 
-          <em>
-            (yngre gammeldansk/middeldansk in Danish)
-          </em>
+        <li
+          className="listItem"
+        >
+          <input
+            checked={false}
+            name="headword"
+            onChange={[Function]}
+            type="radio"
+            value="criteria"
+          />
+           Headwords
         </li>
-        <li>
-          - Late Middle Danish 1350 - 1525 
-          <em>
-            (ældre gammeldansk/middeldansk in Danish)
-          </em>
+        <li
+          className="listItem"
+        >
+          <input
+            checked={false}
+            name="definitions"
+            onChange={[Function]}
+            type="radio"
+            value="criteria"
+          />
+           Definitions
         </li>
       </ul>
-    </section>
+      <button
+        className="button"
+        type="submit"
+      >
+        Search
+      </button>
+    </form>
+    <p
+      className="blue"
+    >
+      0
+       results found
+    </p>
+    <ul
+      className="list"
+    />
+    <p>
+      No search results
+    </p>
     <div
       aria-label="Back to top"
       className="backToTop"

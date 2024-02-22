@@ -5,6 +5,7 @@ import Image from 'next/image'
 // Components.
 import Hamburger from 'components/Hamburger'
 import LetterLink from 'components/LetterLink'
+import SearchBar from 'components/SearchBar'
 
 // Styles.
 import { AlphabetLetter } from 'lib/services/dictionary'
@@ -41,6 +42,7 @@ export default function Navigation({ letters }: NavigationProps) {
               </li>
             ))}
           </ul>
+          <SearchBar />
         </div>
       </nav>
     </>
