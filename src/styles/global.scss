@@ -1,0 +1,38 @@
+@import 'reset-css';
+@import 'variables';
+@import 'media-queries';
+@import 'typography';
+@import 'containers';
+@import 'buttons';
+@import 'links';
+
+body,
+html {
+  max-width: 100%;
+  overflow-x: hidden;
+  scroll-behavior: smooth;
+}
+
+html {
+  box-sizing: border-box;
+}
+
+*,
+*::before,
+*::after {
+  box-sizing: inherit;
+}
+
+.capitalize {
+  text-transform: capitalize;
+}
+
+.blue {
+  color: $color-blue;
+}
+
+.list {
+  list-style: disc;
+  padding-left: 20px;
+  margin-bottom: 20px;
+}
