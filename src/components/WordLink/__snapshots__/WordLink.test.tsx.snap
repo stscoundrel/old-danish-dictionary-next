@@ -1,0 +1,13 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`WordLink component Matches snapshot 1`] = `
+<a
+  className="link"
+  href="/word/afkora"
+  onClick={[Function]}
+  onMouseEnter={[Function]}
+  onTouchStart={[Function]}
+>
+  afköra
+</a>
+`;
