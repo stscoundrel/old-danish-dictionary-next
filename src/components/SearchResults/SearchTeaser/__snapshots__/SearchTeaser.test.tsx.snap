@@ -1,0 +1,27 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Search teaser component Matches snapshot 1`] = `
+<div
+  className="result"
+>
+  <a
+    className="link"
+    href="/word/afkora"
+    onClick={[Function]}
+    onMouseEnter={[Function]}
+    onTouchStart={[Function]}
+  >
+    afköra
+  </a>
+  <ul>
+    <li
+      className="foundIn"
+      dangerouslySetInnerHTML={
+        {
+          "__html": " , vräka. hafwi wald han <mark>afköra</mark>  GS 43 (1416?). af ty ahren (för areno) han landboen afkörer ib.",
+        }
+      }
+    />
+  </ul>
+</div>
+`;

@@ -372,6 +372,26 @@ exports[`Layout component Letter layout Matches snapshot 1`] = `
             </a>
           </li>
         </ul>
+        <form
+          className="form"
+          onSubmit={[Function]}
+        >
+          <input
+            aria-label="Search"
+            className="input"
+            name="search"
+            onChange={[Function]}
+            type="search"
+            value=""
+          />
+          <button
+            className="button button--secondary button--no-margs"
+            name="submit"
+            type="submit"
+          >
+            Search
+          </button>
+        </form>
       </div>
     </nav>
     <nav
@@ -1275,6 +1295,26 @@ exports[`Layout component Word layout Matches snapshot 1`] = `
             </a>
           </li>
         </ul>
+        <form
+          className="form"
+          onSubmit={[Function]}
+        >
+          <input
+            aria-label="Search"
+            className="input"
+            name="search"
+            onChange={[Function]}
+            type="search"
+            value=""
+          />
+          <button
+            className="button button--secondary button--no-margs"
+            name="submit"
+            type="submit"
+          >
+            Search
+          </button>
+        </form>
       </div>
     </nav>
     <nav
