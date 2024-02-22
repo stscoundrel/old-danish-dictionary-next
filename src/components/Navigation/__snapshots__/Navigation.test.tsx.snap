@@ -115,19 +115,6 @@ exports[`Navigation component Matches snapshot 1`] = `
         >
           <a
             className="link"
-            href="/letter/i"
-            onClick={[Function]}
-            onMouseEnter={[Function]}
-            onTouchStart={[Function]}
-          >
-            i
-          </a>
-        </li>
-        <li
-          className="listItem"
-        >
-          <a
-            className="link"
             href="/letter/f"
             onClick={[Function]}
             onMouseEnter={[Function]}
@@ -167,12 +154,12 @@ exports[`Navigation component Matches snapshot 1`] = `
         >
           <a
             className="link"
-            href="/letter/s"
+            href="/letter/i"
             onClick={[Function]}
             onMouseEnter={[Function]}
             onTouchStart={[Function]}
           >
-            s
+            i
           </a>
         </li>
         <li
@@ -258,19 +245,6 @@ exports[`Navigation component Matches snapshot 1`] = `
         >
           <a
             className="link"
-            href="/letter/y"
-            onClick={[Function]}
-            onMouseEnter={[Function]}
-            onTouchStart={[Function]}
-          >
-            y
-          </a>
-        </li>
-        <li
-          className="listItem"
-        >
-          <a
-            className="link"
             href="/letter/p"
             onClick={[Function]}
             onMouseEnter={[Function]}
@@ -290,6 +264,19 @@ exports[`Navigation component Matches snapshot 1`] = `
             onTouchStart={[Function]}
           >
             r
+          </a>
+        </li>
+        <li
+          className="listItem"
+        >
+          <a
+            className="link"
+            href="/letter/s"
+            onClick={[Function]}
+            onMouseEnter={[Function]}
+            onTouchStart={[Function]}
+          >
+            s
           </a>
         </li>
         <li
@@ -342,6 +329,19 @@ exports[`Navigation component Matches snapshot 1`] = `
             onTouchStart={[Function]}
           >
             x
+          </a>
+        </li>
+        <li
+          className="listItem"
+        >
+          <a
+            className="link"
+            href="/letter/y"
+            onClick={[Function]}
+            onMouseEnter={[Function]}
+            onTouchStart={[Function]}
+          >
+            y
           </a>
         </li>
         <li
