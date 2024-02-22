@@ -1,9 +1,9 @@
 import {
-  getAbbreviations,
   addAbbreviationsToContent,
-} from 'lib/services/abbreviations'
+} from 'lib/services/abbreviations/client'
+import { getAbbreviations } from 'lib/services/abbreviations/server'
 
-describe('Abbreviations tests', () => {
+describe('Abbreviations client tests', () => {
   const entry = {
     headword: 'Abild',
     definitions: [
@@ -11,19 +11,6 @@ describe('Abbreviations tests', () => {
     ],
     slug: 'abild',
   }
-
-  test('Abbreviations have expected content', () => {
-    const result = getAbbreviations(entry)
-
-    const expected = [
-      { abbreviation: 'isl.', explanation: 'islandsk.' },
-      { abbreviation: 'n.', explanation: 'norsk.' },
-      { abbreviation: 'no.', explanation: 'navneord (substantivum).' },
-      { abbreviation: 'æ.', explanation: 'ældre.' },
-    ]
-
-    expect(result).toEqual(expected)
-  })
 
   test('Adds abbr tags to content', () => {
     const abbreviations = getAbbreviations(entry)

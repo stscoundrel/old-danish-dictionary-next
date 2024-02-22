@@ -1,0 +1,79 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Abbreviations component Matches the snapshot 1`] = `
+<div
+  className="abbreviations"
+>
+  <div
+    className="column"
+  >
+    <h4>
+      Abbreviations used:
+    </h4>
+    <dl
+      className="wrap"
+    >
+      <dt
+        className="abbreviation"
+      >
+        <strong>
+          isl.
+        </strong>
+      </dt>
+      <dd
+        className="explanation"
+      >
+        islandsk.
+      </dd>
+    </dl>
+    <dl
+      className="wrap"
+    >
+      <dt
+        className="abbreviation"
+      >
+        <strong>
+          n.
+        </strong>
+      </dt>
+      <dd
+        className="explanation"
+      >
+        norsk.
+      </dd>
+    </dl>
+    <dl
+      className="wrap"
+    >
+      <dt
+        className="abbreviation"
+      >
+        <strong>
+          no.
+        </strong>
+      </dt>
+      <dd
+        className="explanation"
+      >
+        navneord (substantivum).
+      </dd>
+    </dl>
+    <dl
+      className="wrap"
+    >
+      <dt
+        className="abbreviation"
+      >
+        <strong>
+          æ.
+        </strong>
+      </dt>
+      <dd
+        className="explanation"
+      >
+        ældre.
+      </dd>
+    </dl>
+  </div>
+</div>
+`;
