@@ -1,5 +1,5 @@
 // NOTE: non-exact amount, as parser may yet provide additional entries.
-const WORDS = 4600
+const WORDS = 46000
 
 let start = 0
 
