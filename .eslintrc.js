@@ -1,4 +1,5 @@
 module.exports = {
+    root: true,
     extends: [
       'airbnb-base',
       'next',
@@ -18,8 +19,6 @@ module.exports = {
       'jest/globals': true,
     },
     plugins: [
-      'import',
-      'react',
       'jest',
       '@typescript-eslint',
     ],
