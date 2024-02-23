@@ -24,7 +24,7 @@ export default function Footer({ letters }: FooterProps) {
         <ContentArea>
           <h3 className='h4'>Old Danish language</h3>
           <p>
-            Old Swedish developed from Old East Norse, the eastern dialect of Old Norse,
+            Old Danish developed from Old East Norse, the eastern dialect of Old Norse,
             at the end of the Viking Age.
           </p>
 
