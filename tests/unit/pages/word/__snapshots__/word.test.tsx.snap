@@ -631,6 +631,7 @@ exports[`Word page: render & usage Matches snapshot 1`] = `
           </dl>
         </div>
       </div>
+      <br />
     </article>
     <a
       className="button"

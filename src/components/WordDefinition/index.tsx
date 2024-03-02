@@ -5,16 +5,19 @@ import { addAbbreviationsToContent } from 'lib/services/abbreviations/client'
 import Abbreviations from 'components/Abbreviations'
 import SimilarEntries from 'components/SimilarEntries'
 import { Abbreviation } from 'lib/services/abbreviations/model'
+import { Crosslink } from 'scandinavian-dictionary-crosslinker'
+import Crosslinks from 'components/Crosslinks'
 import styles from './WordDefinition.module.scss'
 
 interface WordDefinitionProps{
   entry: DictionaryEntry,
   similarEntries: DictionaryEntry[],
   abbreviations: Abbreviation[],
+  crosslinks: Crosslink[],
 }
 
 export default function WordDefinition({
-  entry, similarEntries, abbreviations,
+  entry, similarEntries, abbreviations, crosslinks,
 }: WordDefinitionProps) {
   const {
     headword, definitions,
@@ -53,6 +56,8 @@ export default function WordDefinition({
 
       <SimilarEntries entries={similarEntries} />
       <Abbreviations abbreviations={abbreviations} />
+      <br />
+      <Crosslinks crosslinks={crosslinks} />
     </article>
   )
 }

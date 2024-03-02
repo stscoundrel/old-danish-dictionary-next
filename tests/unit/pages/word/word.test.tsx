@@ -3,6 +3,7 @@ import Word, { getStaticProps, getStaticPaths } from 'pages/word/[word]'
 import renderer from 'react-test-renderer'
 import { getAlphabet } from 'lib/services/dictionary'
 import { DictionaryEntry } from 'lib/models/dictionary'
+import { DictionarySource } from 'scandinavian-dictionary-crosslinker'
 
 const mockHandler = jest.fn()
 
@@ -55,6 +56,7 @@ describe('Word page: render & usage', () => {
         letters={getAlphabet()}
         letter={letter}
         abbreviations={abbreviations}
+        crosslinks={[]}
       />,
     )
   })
@@ -67,6 +69,7 @@ describe('Word page: render & usage', () => {
         letters={getAlphabet()}
         letter={letter}
         abbreviations={abbreviations}
+        crosslinks={[]}
       />,
     ).toJSON()
     expect(tree).toMatchSnapshot()
@@ -80,6 +83,7 @@ describe('Word page: render & usage', () => {
         letters={getAlphabet()}
         letter={letter}
         abbreviations={abbreviations}
+        crosslinks={[]}
       />,
     ).toJSON()
     expect(tree).toBeNull()
@@ -93,6 +97,7 @@ describe('Word page: render & usage', () => {
       letters={getAlphabet()}
       letter={letter}
       abbreviations={abbreviations}
+      crosslinks={[]}
     />,
     )
 
@@ -138,10 +143,44 @@ describe('Word page: data fetching', () => {
         letters: getAlphabet(),
         letter,
         abbreviations,
+        crosslinks: [],
       },
     }
 
     const result = await getStaticProps({ params: { word: 'abe' } })
+
+    expect(result).toEqual(expected)
+  })
+
+  test('getStaticProps fetches crosslinks', async () => {
+    const expected = {
+      props: {
+        entry: {
+          headword: 'Dag',
+          definitions: [
+            '. no. 1)-a) hank.; den dag skal hastelige: Komme paa eder, han skal komme som en snare. Luk. 21.ss (Chr. Pedersen, 1550, 1607); 1. Msb. 2.s (1550, 1607); gømer myn lelligh ellær høktidhe. dagh, fortby han ær belligh. GI. D. Bib. 2. MsD. Slu; Psalmedigtn. I. 2; 1428; den Jiuse dag, som vi søndagen kalle, hand var den første. Hexaem. e8; naar Mariæ bebudelsis dag falder udi dimmel vge, da holdis hand lands- hellig. J. Lauritzsøn Wolff,',
+          ],
+          slug: 'dag',
+        },
+        similarEntries: [],
+        letter: { letter: 'd', slug: 'd' },
+        letters: getAlphabet(),
+        abbreviations: [
+          { abbreviation: 'g.', explanation: 'grad (gradus).' },
+          { abbreviation: 'hank.', explanation: 'hankon (masculinum). ' },
+          { abbreviation: 'n.', explanation: 'norsk.' },
+          { abbreviation: 'no.', explanation: 'navneord (substantivum).' },
+        ],
+        crosslinks: [
+          {
+            url: 'https://old-swedish-dictionary.vercel.app/word/dag',
+            source: DictionarySource.OldSwedish,
+          },
+        ],
+      },
+    }
+
+    const result = await getStaticProps({ params: { word: 'dag' } })
 
     expect(result).toEqual(expected)
   })
