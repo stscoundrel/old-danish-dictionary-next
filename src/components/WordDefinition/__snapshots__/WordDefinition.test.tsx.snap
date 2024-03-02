@@ -207,5 +207,27 @@ exports[`WordDefinition component Matches snapshot 1`] = `
       </dl>
     </div>
   </div>
+  <br />
+  <h4>
+    Also available in related dictionaries:
+  </h4>
+  <p>
+    This headword also appears in dictionaries of other languages closely related to Old Swedish.
+  </p>
+  <ul
+    className="list"
+  >
+    <li
+      className="listItem"
+    >
+      <a
+        href="https://old-swedish-dictionary.vercel.app/word/dag"
+        rel="noopener noreferrer"
+        target="_blank"
+      >
+        Old Swedish - K.F Söderwall's Dictionary
+      </a>
+    </li>
+  </ul>
 </article>
 `;

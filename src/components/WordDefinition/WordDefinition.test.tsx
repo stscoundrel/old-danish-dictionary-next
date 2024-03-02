@@ -1,6 +1,7 @@
 import { DictionaryEntry } from 'lib/models/dictionary'
 import ReactDOM from 'react-dom/client'
 import renderer from 'react-test-renderer'
+import { Crosslink, DictionarySource } from 'scandinavian-dictionary-crosslinker'
 import WordDefinition from './index'
 
 const entry: DictionaryEntry = {
@@ -22,6 +23,13 @@ const abbreviations = [
   { abbreviation: 'n.', explanation: 'norsk.' },
 ]
 
+const crosslinks: Crosslink[] = [
+  {
+    url: 'https://old-swedish-dictionary.vercel.app/word/dag',
+    source: DictionarySource.OldSwedish,
+  },
+]
+
 describe('WordDefinition component', () => {
   test('Does not crash', () => {
     const div = document.createElement('div')
@@ -31,6 +39,7 @@ describe('WordDefinition component', () => {
         entry={entry}
         abbreviations={abbreviations}
         similarEntries={[entry]}
+        crosslinks={crosslinks}
       />,
     )
   })
@@ -41,6 +50,7 @@ describe('WordDefinition component', () => {
         entry={entry}
         similarEntries={[entry]}
         abbreviations={abbreviations}
+        crosslinks={crosslinks}
       />,
     ).toJSON()
     expect(tree).toMatchSnapshot()
@@ -52,6 +62,7 @@ describe('WordDefinition component', () => {
         entry={entry}
         similarEntries={[entry]}
         abbreviations={abbreviations}
+        crosslinks={crosslinks}
       />,
     )
     const { root } = tree
