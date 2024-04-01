@@ -1,6 +1,7 @@
 import com.microsoft.playwright.options.LoadState
 import org.junit.jupiter.api.Assertions.assertEquals
 import org.junit.jupiter.api.Test
+import utils.E2ETestCase
 
 class LetterPagesTest : E2ETestCase() {
     private val urlAndLetters = listOf(
