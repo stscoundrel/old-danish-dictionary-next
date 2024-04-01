@@ -1,0 +1,34 @@
+name: Kotlin - Integration Test
+
+on: [pull_request]
+
+jobs:
+  build:
+
+    runs-on: ubuntu-latest
+
+    strategy:
+      matrix:
+        node-version: [20.x]
+
+    steps:
+    - uses: actions/checkout@v4
+    - name: Install Gradle
+      uses: actions/setup-java@v4
+      with:
+        distribution: 'temurin'
+        java-version: '17'
+    - name: Install & build with Node.js ${{ matrix.node-version }}
+      uses: actions/setup-node@v4
+      with:
+        node-version: ${{ matrix.node-version }}
+    - run: yarn install
+    - name: Build app
+      run: yarn build
+    - name: Start app
+      run: yarn start &
+    - name: Wait for app to Start
+      run: sleep 5
+    - run: cd tests/integration/olddanishdictionarye2e && ./gradlew test -i
+      env:
+        CI: true
