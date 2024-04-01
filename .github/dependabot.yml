@@ -9,6 +9,15 @@ updates:
        dependencies:
           patterns:
             - "*" # Match all dependencies to one PR.
+
+  - package-ecosystem: "gradle"
+    directory: "/tests/integration/olddanishictionarye2e"
+    schedule:
+      interval: "monthly"
+    groups:
+       dependencies:
+          patterns:
+            - "*" # Match all dependencies to one PR.
   
   - package-ecosystem: "github-actions"
     directory: "/"
