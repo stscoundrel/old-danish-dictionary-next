@@ -1,9 +1,10 @@
+package utils
+
 import com.microsoft.playwright.Browser
 import com.microsoft.playwright.BrowserContext
 import com.microsoft.playwright.Page
 import com.microsoft.playwright.Playwright
 import org.junit.jupiter.api.*
-
 
 @TestInstance(TestInstance.Lifecycle.PER_CLASS)
 open class E2ETestCase {

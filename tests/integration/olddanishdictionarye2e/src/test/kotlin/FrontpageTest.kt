@@ -1,4 +1,5 @@
 import org.junit.jupiter.api.Test
+import utils.E2ETestCase
 import kotlin.test.assertEquals
 
 class FrontpageTest : E2ETestCase() {
