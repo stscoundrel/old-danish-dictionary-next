@@ -13,6 +13,7 @@ exports[`SearchForm component Matches snapshot 1`] = `
     </h1>
     <input
       className="input"
+      data-testid="searchform-input"
       name="search"
       onChange={[Function]}
       type="search"
@@ -63,6 +64,7 @@ exports[`SearchForm component Matches snapshot 1`] = `
     </ul>
     <button
       className="button"
+      data-testid="searchform-submit"
       type="submit"
     >
       Search

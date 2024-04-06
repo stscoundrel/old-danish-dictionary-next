@@ -13,8 +13,8 @@ export default function SearchBar() {
 
   return (
    <form className={styles.form} onSubmit={(e) => handleSearch(e)}>
-      <input className={styles.input} aria-label="Search" type="search" name="search" value={search} onChange={(e) => setSearch(e.target.value)}/>
-      <button className="button button--secondary button--no-margs" name="submit" type="submit">Search</button>
+      <input data-testid="searchbar-input" className={styles.input} aria-label="Search" type="search" name="search" value={search} onChange={(e) => setSearch(e.target.value)}/>
+      <button data-testid="searchbar-submit" className="button button--secondary button--no-margs" name="submit" type="submit">Search</button>
     </form>
   )
 }
