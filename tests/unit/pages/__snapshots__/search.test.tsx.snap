@@ -379,6 +379,7 @@ exports[`Search page: render Matches snapshot 1`] = `
           <input
             aria-label="Search"
             className="input"
+            data-testid="searchbar-input"
             name="search"
             onChange={[Function]}
             type="search"
@@ -386,6 +387,7 @@ exports[`Search page: render Matches snapshot 1`] = `
           />
           <button
             className="button button--secondary button--no-margs"
+            data-testid="searchbar-submit"
             name="submit"
             type="submit"
           >
@@ -434,6 +436,7 @@ exports[`Search page: render Matches snapshot 1`] = `
       </h1>
       <input
         className="input"
+        data-testid="searchform-input"
         name="search"
         onChange={[Function]}
         type="search"
@@ -484,6 +487,7 @@ exports[`Search page: render Matches snapshot 1`] = `
       </ul>
       <button
         className="button"
+        data-testid="searchform-submit"
         type="submit"
       >
         Search

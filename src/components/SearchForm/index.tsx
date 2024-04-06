@@ -72,7 +72,7 @@ export default function SearchForm() {
     <>
       <form className={styles.form} onSubmit={(e) => handleSearch(e)}>
         <h1 className="h3">Search</h1>
-        <input className={styles.input} type="search" name="search" value={search} onChange={(e) => setSearch(e.target.value)}/>
+        <input data-testid="searchform-input" className={styles.input} type="search" name="search" value={search} onChange={(e) => setSearch(e.target.value)}/>
         <ul className={styles.list}>
           <p>Search from:</p>
           <li className={styles.listItem}>
@@ -85,7 +85,7 @@ export default function SearchForm() {
             <input type="radio" value="criteria" name="definitions" checked={selectedCriteria === 'definitions'} onChange={(e) => changeCriteria(e)} /> Definitions
           </li>
         </ul>
-        <button className="button" type="submit">Search</button>
+        <button data-testid="searchform-submit" className="button" type="submit">Search</button>
       </form>
 
       {isLoading && <LoadingSpinner /> }
