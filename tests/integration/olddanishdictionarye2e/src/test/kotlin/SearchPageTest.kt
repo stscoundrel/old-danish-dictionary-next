@@ -3,13 +3,14 @@ import org.junit.jupiter.api.BeforeEach
 import org.junit.jupiter.api.Test
 import utils.E2ETestCase
 import utils.extractQueryParams
+import utils.setDesktopSize
 import utils.urlWithoutQueryParams
 import kotlin.test.assertEquals
 
 class SearchPageTest : E2ETestCase() {
     @BeforeEach
     fun forceDesktopSize() {
-        page?.setViewportSize(1600, 1200)
+        setDesktopSize(page)
     }
 
     @Test
