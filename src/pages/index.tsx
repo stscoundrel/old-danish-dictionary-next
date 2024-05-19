@@ -32,7 +32,7 @@ export default function Index({ letters }: IndexProps) {
         <p>The dictionary contains over 45 000 translations
           from Old Danish to Danish. This is the largest dictionary of the language.</p>
 
-        <Link href="/search" className="button">
+        <Link href="/search" className="button" prefetch={false}>
           Search the dictionary
         </Link>
       </ContentArea>
