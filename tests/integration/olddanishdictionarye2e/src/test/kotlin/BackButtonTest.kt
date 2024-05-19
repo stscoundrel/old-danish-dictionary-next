@@ -14,10 +14,10 @@ class BackButtonTest : E2ETestCase() {
 
         // Navigate to a headword page.
         page?.click("text=abbot")
-        assertEquals("$appBaseUrl/word/abbot", page?.url())
+        page?.waitForURL("$appBaseUrl/word/abbot")
 
         // Try to go back using "back" button.
         page?.click("text=Back")
-        assertEquals("$appBaseUrl/letter/a", page?.url())
+        page?.waitForURL("$appBaseUrl/letter/a")
     }
 }
