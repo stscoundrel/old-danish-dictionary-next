@@ -29,7 +29,7 @@ export default function Navigation({ letters }: NavigationProps) {
       <div className={styles.topBarSpacer}></div>
       <nav className={styles.section}>
         <div className={`${styles.topbar} container`}>
-          <Link href="/" passHref>
+          <Link href="/" passHref prefetch={false}>
             <Image src="/favicon-48x48.png" width="30" height="30" alt="To home" />
           </Link>
           <Hamburger action={openNav} />

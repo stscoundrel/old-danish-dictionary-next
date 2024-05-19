@@ -9,7 +9,7 @@ interface WordLinkProps{
 
 export default function WordLink({ data: { slug, headword }, useLowerCase = true }: WordLinkProps) {
   return (
-   <Link key={`link${slug}`} href={`/word/${slug}`} className={styles.link}>
+   <Link key={`link${slug}`} href={`/word/${slug}`} className={styles.link} prefetch={false}>
       {useLowerCase ? headword.toLowerCase() : headword}
     </Link>
   )
