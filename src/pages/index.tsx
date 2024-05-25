@@ -62,6 +62,28 @@ export default function Index({ letters }: IndexProps) {
       <ContentArea>
         <SampleText />
       </ContentArea>
+
+      <ContentArea>
+        <h2 className="h4">Written language of the dictionary</h2>
+        <p>The dictionary was published in the late 1800&apos;s, making the language
+          of the definitions quite old fashioned for readers of modern Danish.
+          The definitions generally also contain quotes from older dictionaries, so the
+          language can be an exotic mixture of medieval and modern Danish.
+        </p>
+      </ContentArea>
+
+      <ContentArea>
+        <h3 className="h5">Did you find a mistake?</h3>
+        <p>
+          This dictionary has been machine generated, which means there are many mistakes.
+          It is based on scans and photos of a quite large book from the 19th century.
+          This means only a fraction of the OCR (image to text) output has been proofread.
+        </p>
+        <p>
+          The quality will be improved in small increments. If some pages seem completely wrong,
+          you can open an issue in Github. Links is in the footer for website & data source.
+        </p>
+      </ContentArea>
     </Layout>
   )
 }
