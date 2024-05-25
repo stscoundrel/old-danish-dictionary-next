@@ -6,6 +6,7 @@ import Layout from 'components/Layout'
 import ContentArea from 'components/ContentArea'
 import { ContentType } from 'lib/models/content-types'
 import Link from 'next/link'
+import SampleText from 'components/SampleText'
 
 interface IndexProps{
   letters: AlphabetLetter[]
@@ -56,6 +57,10 @@ export default function Index({ letters }: IndexProps) {
                 - Late Middle Danish 1350 - 1525 <em>(ældre gammeldansk/middeldansk in Danish)</em>
             </li>
             </ul>
+      </ContentArea>
+
+      <ContentArea>
+        <SampleText />
       </ContentArea>
     </Layout>
   )
