@@ -485,6 +485,116 @@ exports[`Index page Matches snapshot 1`] = `
         </li>
       </ul>
     </section>
+    <section
+      className="section"
+    >
+      <p
+        className="h4"
+      >
+        A sample of Old Danish:
+      </p>
+      <p>
+        <em>
+          <a
+            href="/word/tage-2"
+            onClick={[Function]}
+            onMouseEnter={[Function]}
+            onTouchStart={[Function]}
+          >
+            Takær
+          </a>
+           
+          <a
+            href="/word/bonde"
+            onClick={[Function]}
+            onMouseEnter={[Function]}
+            onTouchStart={[Function]}
+          >
+            bondæ
+          </a>
+           annær 
+          <a
+            href="/word/mand"
+            onClick={[Function]}
+            onMouseEnter={[Function]}
+            onTouchStart={[Function]}
+          >
+            man
+          </a>
+           mæth 
+          <a
+            href="/word/sin-2"
+            onClick={[Function]}
+            onMouseEnter={[Function]}
+            onTouchStart={[Function]}
+          >
+            sin
+          </a>
+           
+          <a
+            href="/word/kvinde"
+            onClick={[Function]}
+            onMouseEnter={[Function]}
+            onTouchStart={[Function]}
+          >
+            kunæ
+          </a>
+           
+          <a
+            href="/word/og"
+            onClick={[Function]}
+            onMouseEnter={[Function]}
+            onTouchStart={[Function]}
+          >
+            oc
+          </a>
+           
+          <a
+            href="/word/komme"
+            onClick={[Function]}
+            onMouseEnter={[Function]}
+            onTouchStart={[Function]}
+          >
+            kumar
+          </a>
+           
+          <a
+            href="/word/sva"
+            onClick={[Function]}
+            onMouseEnter={[Function]}
+            onTouchStart={[Function]}
+          >
+            swa
+          </a>
+           at 
+          <a
+            href="/word/han-2"
+            onClick={[Function]}
+            onMouseEnter={[Function]}
+            onTouchStart={[Function]}
+          >
+            han
+          </a>
+           
+          <a
+            href="/word/draebe"
+            onClick={[Function]}
+            onMouseEnter={[Function]}
+            onTouchStart={[Function]}
+          >
+            dræpær
+          </a>
+           anti mannen [...]
+        </em>
+        <hr />
+        <em>
+          If a peasant finds another man with his wife and it happens that he does not kill the man [...]
+        </em>
+      </p>
+      <p>
+        - Excerpt from The Zealandic Law of Erik, 13th century.
+      </p>
+    </section>
     <div
       aria-label="Back to top"
       className="backToTop"
