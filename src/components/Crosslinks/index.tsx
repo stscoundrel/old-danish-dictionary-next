@@ -35,7 +35,7 @@ export default function Crosslinks({ crosslinks }: CrossLinkProps) {
     <>
       <h4>Also available in related dictionaries:</h4>
       <p>This headword also appears in dictionaries of other languages closely
-        related to Old Swedish.
+        related to Old Danish.
       </p>
       <ul className={styles.list}>
         {crosslinks.map(({ url, source }, index) => (
