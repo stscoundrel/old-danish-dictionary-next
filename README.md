@@ -8,9 +8,11 @@ See live site [here](https://old-danish-dictionary.vercel.app)
 
 - Online version of Old Danish dictionary
 - Old Danish to Danish translations
-- Abbreviations mapped to their full meanings
 - 45 000+ statically generated pages
+- Abbreviations mapped to their full meanings
 - Search words & definitions.
+- Automatic cross links to headwords in related dictionaries.
+- Automatic similar entries / homoonyms mapping.
 - High test coverage (unit + integration)
 - Optimized for fast load times (PWA)
 - SEO, Accessibility and Schema optimized
