@@ -115,14 +115,12 @@ describe('Word page: render & usage', () => {
 
 describe('Word page: data fetching', () => {
   test('getStaticPaths works', async () => {
-    const expected = {
-      paths: [],
-      fallback: 'blocking',
-    }
-
     const result = await getStaticPaths()
 
-    expect(result).toMatchObject(expected)
+    expect(result.fallback).toBe('blocking')
+
+    // Should've build initial pages.
+    expect(result.paths.length).toBe(5656)
   })
 
   test('getStaticProps works', async () => {
