@@ -1,6 +1,7 @@
 import { getDictionary } from 'old-danish-dictionary'
 import {
   getAllWords, getByLetter, getWord, getAlphabet,
+  getInitialWordsToBuild,
 } from 'lib/services/dictionary'
 
 describe('Dictionary tests', () => {
@@ -96,5 +97,23 @@ describe('Dictionary tests', () => {
     alphabet.forEach((entry) => {
       expect(Object.keys(entry)).toEqual(expectedKeys)
     })
+  })
+
+  test('Returns initial batch of pages to build', () => {
+    const wordsToBuild = getInitialWordsToBuild()
+
+    // Correct amount sampled.
+    expect(wordsToBuild.length).toEqual(5656)
+
+    // Deterministic entry slugs, roughly spread through dictionary.
+    expect(wordsToBuild[0]).toEqual('abbot')
+    expect(wordsToBuild[10]).toEqual('adle')
+    expect(wordsToBuild[100]).toEqual('arbedslon')
+    expect(wordsToBuild[1000]).toEqual('forstokken')
+    expect(wordsToBuild[2000]).toEqual('klaptrae')
+    expect(wordsToBuild[3000]).toEqual('nege')
+    expect(wordsToBuild[4000]).toEqual('slyskenpak')
+    expect(wordsToBuild[5000]).toEqual('udugtighed')
+    expect(wordsToBuild[5600]).toEqual('aevi')
   })
 })
