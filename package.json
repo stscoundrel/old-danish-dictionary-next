@@ -27,13 +27,13 @@
     "abbreviatrix": "^1.0.8",
     "futhork": "^1.1.9",
     "markari": "^1.0.7",
-    "next": "^14.2.30",
+    "next": "^14.2.32",
     "next-pwa": "^5.6.0",
     "old-danish-dictionary": "^0.2.3",
     "react": "^18.3.1",
     "react-dom": "^18.3.1",
     "reset-css": "^5.0.2",
-    "sass": "^1.89.2",
+    "sass": "^1.90.0",
     "scandinavian-dictionary-crosslinker": "^0.7.0",
     "sharp": "^0.33.5",
     "sitemap": "^7.1.1",
@@ -42,14 +42,14 @@
   },
   "devDependencies": {
     "@types/jest": "^29.5.14",
-    "@types/node": "^22.15.34",
-    "@types/react": "^18.3.23",
+    "@types/node": "^22.17.2",
+    "@types/react": "^18.3.24",
     "@typescript-eslint/eslint-plugin": "^7.18.0",
     "@typescript-eslint/parser": "^7.18.0",
     "eslint": "8.57.1",
     "eslint-config-airbnb": "^19.0.4",
     "eslint-config-airbnb-base": "^15.0.0",
-    "eslint-config-next": "^14.2.30",
+    "eslint-config-next": "^14.2.32",
     "eslint-plugin-import": "^2.32.0",
     "eslint-plugin-jest": "^28.14.0",
     "eslint-plugin-jsx-a11y": "^6.10.2",
@@ -62,7 +62,7 @@
     "node-mocks-http": "^1.17.2",
     "react-test-renderer": "^18.3.1",
     "ts-node": "^10.9.2",
-    "typescript": "^5.8.3"
+    "typescript": "^5.9.2"
   },
   "packageManager": "yarn@4.1.0"
 }
