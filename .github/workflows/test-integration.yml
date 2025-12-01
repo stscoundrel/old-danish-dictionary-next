@@ -12,14 +12,14 @@ jobs:
         node-version: [22.x]
 
     steps:
-    - uses: actions/checkout@v5
+    - uses: actions/checkout@v6
     - name: Install Gradle
       uses: actions/setup-java@v5
       with:
         distribution: 'temurin'
         java-version: '17'
     - name: Install & build with Node.js ${{ matrix.node-version }}
-      uses: actions/setup-node@v5
+      uses: actions/setup-node@v6
       with:
         node-version: ${{ matrix.node-version }}
     - run: yarn install
