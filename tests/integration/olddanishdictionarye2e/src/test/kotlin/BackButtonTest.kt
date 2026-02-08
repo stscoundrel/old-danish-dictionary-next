@@ -19,8 +19,5 @@ class BackButtonTest : E2ETestCase() {
         // Try to go back using "back" button.
         page?.click("text=Back")
         page?.waitForURL("$appBaseUrl/letter/a")
-
-        // Debug        
-        page?.waitForURL("$appBaseUrl/absolutely-not-a-valid-url")
     }
 }
