@@ -14,7 +14,7 @@ updates:
           - "patch"
 
   - package-ecosystem: "gradle"
-    directory: "/tests/integration/olddanishictionarye2e"
+    directory: "/tests/integration/olddanishdictionarye2e"
     schedule:
       interval: "monthly"
     groups:
