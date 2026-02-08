@@ -24,6 +24,7 @@ jobs:
         node-version: ${{ matrix.node-version }}
     - run: yarn install
     - run: npx playwright install-deps
+    - run: sudo apt-get update && sudo apt-get install -y libvpx7
     - name: Build app
       run: yarn build
     - name: Start app
