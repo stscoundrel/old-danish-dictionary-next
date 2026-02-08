@@ -21,6 +21,19 @@ tasks.test {
     useJUnitPlatform()
 }
 
+tasks.withType<Test> {
+    testLogging {
+        events(
+            TestLogEvent.PASSED,
+            TestLogEvent.FAILED,
+            TestLogEvent.SKIPPED,
+            TestLogEvent.STANDARD_OUT,
+            TestLogEvent.STANDARD_ERROR
+        )
+        showStandardStreams = true
+    }
+}
+
 kotlin {
     jvmToolchain(11)
 }
