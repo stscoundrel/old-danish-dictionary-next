@@ -18,9 +18,12 @@ updates:
     schedule:
       interval: "monthly"
     groups:
-       gradle-dependencies:
-          patterns:
-            - "*" # Match all dependencies to one PR.
+      gradle-minor-and-patch:
+        patterns:
+          - "*"
+        update-types:
+          - "minor"
+          - "patch"
   
   - package-ecosystem: "github-actions"
     directory: "/"
