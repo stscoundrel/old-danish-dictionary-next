@@ -1,5 +1,5 @@
 plugins {
-    kotlin("jvm") version "1.8.0"
+    kotlin("jvm") version "2.3.10"
     application
 }
 
@@ -12,9 +12,9 @@ repositories {
 
 dependencies {
     testImplementation(kotlin("test"))
-    implementation("com.microsoft.playwright:playwright:1.42.0")
-    testImplementation("org.junit.jupiter:junit-jupiter-api:5.8.0")
-    testRuntimeOnly("org.junit.jupiter:junit-jupiter-engine:5.8.0")
+    implementation("com.microsoft.playwright:playwright:1.58.0")
+    testImplementation("org.junit.jupiter:junit-jupiter-api:6.0.2")
+    testRuntimeOnly("org.junit.jupiter:junit-jupiter-engine:6.0.2")
 }
 
 tasks.test {
