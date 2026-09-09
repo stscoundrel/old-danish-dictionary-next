@@ -1,24 +1,29 @@
 // Components.
-import Head from 'components/Head'
-import Footer from 'components/Footer'
-import Breadcrumbs from 'components/Breadcrumbs'
-import Navigation from 'components/Navigation'
-import BackToTop from 'components/BackToTop'
-import { ContentType } from 'lib/models/content-types'
-import { DictionaryEntry, DictionaryEntryDTO } from 'lib/models/dictionary'
-import { AlphabetLetter } from 'lib/services/dictionary'
+import Head from 'components/Head';
+import Footer from 'components/Footer';
+import Breadcrumbs from 'components/Breadcrumbs';
+import Navigation from 'components/Navigation';
+import BackToTop from 'components/BackToTop';
+import { ContentType } from 'lib/models/content-types';
+import { DictionaryEntry, DictionaryEntryDTO } from 'lib/models/dictionary';
+import { AlphabetLetter } from 'lib/services/dictionary';
 
-interface LayoutProps{
-  type: ContentType,
-  word: DictionaryEntry | null,
-  words: DictionaryEntry[] | DictionaryEntryDTO[],
-  letters: AlphabetLetter[],
-  letter: AlphabetLetter | null,
-  children: JSX.Element | JSX.Element[],
+interface LayoutProps {
+  type: ContentType;
+  word: DictionaryEntry | null;
+  words: DictionaryEntry[] | DictionaryEntryDTO[];
+  letters: AlphabetLetter[];
+  letter: AlphabetLetter | null;
+  children: JSX.Element | JSX.Element[];
 }
 
 export default function Layout({
-  type, letters, word = null, words = [], children, letter = null,
+  type,
+  letters,
+  word = null,
+  words = [],
+  children,
+  letter = null,
 }: LayoutProps) {
   return (
     <>
@@ -31,7 +36,7 @@ export default function Layout({
         {children}
         <BackToTop />
       </main>
-      <Footer letters={letters}/>
+      <Footer letters={letters} />
     </>
-  )
+  );
 }

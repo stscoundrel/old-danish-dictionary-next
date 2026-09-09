@@ -1,27 +1,28 @@
-import { capitalize } from 'lib/utils/strings'
-import { lettersToRunes } from 'futhork'
-import { DictionaryEntry } from 'lib/models/dictionary'
-import { addAbbreviationsToContent } from 'lib/services/abbreviations/client'
-import Abbreviations from 'components/Abbreviations'
-import SimilarEntries from 'components/SimilarEntries'
-import { Abbreviation } from 'lib/services/abbreviations/model'
-import { Crosslink } from 'scandinavian-dictionary-crosslinker'
-import Crosslinks from 'components/Crosslinks'
-import styles from './WordDefinition.module.scss'
+import { capitalize } from 'lib/utils/strings';
+import { lettersToRunes } from 'futhork';
+import { DictionaryEntry } from 'lib/models/dictionary';
+import { addAbbreviationsToContent } from 'lib/services/abbreviations/client';
+import Abbreviations from 'components/Abbreviations';
+import SimilarEntries from 'components/SimilarEntries';
+import { Abbreviation } from 'lib/services/abbreviations/model';
+import { Crosslink } from 'scandinavian-dictionary-crosslinker';
+import Crosslinks from 'components/Crosslinks';
+import styles from './WordDefinition.module.scss';
 
-interface WordDefinitionProps{
-  entry: DictionaryEntry,
-  similarEntries: DictionaryEntry[],
-  abbreviations: Abbreviation[],
-  crosslinks: Crosslink[],
+interface WordDefinitionProps {
+  entry: DictionaryEntry;
+  similarEntries: DictionaryEntry[];
+  abbreviations: Abbreviation[];
+  crosslinks: Crosslink[];
 }
 
 export default function WordDefinition({
-  entry, similarEntries, abbreviations, crosslinks,
+  entry,
+  similarEntries,
+  abbreviations,
+  crosslinks,
 }: WordDefinitionProps) {
-  const {
-    headword, definitions,
-  } = entry
+  const { headword, definitions } = entry;
 
   return (
     <article className={styles.section}>
@@ -31,27 +32,39 @@ export default function WordDefinition({
         <small className={styles.subHeading}>
           Old Danish Dictionary - {headword.toLowerCase()}
         </small>
-        <p>Meaning of Old Danish word <em>&quot;{headword}&quot;</em>,
-        as defined by Otto Kalkar&apos;s Dictionary of Old Danish language.</p>
+        <p>
+          Meaning of Old Danish word <em>&quot;{headword}&quot;</em>, as defined
+          by Otto Kalkar&apos;s Dictionary of Old Danish language.
+        </p>
       </header>
 
-      <p>The Old Danish word <strong><dfn className="capitalize">{headword}</dfn></strong> can mean:</p>
+      <p>
+        The Old Danish word{' '}
+        <strong>
+          <dfn className="capitalize">{headword}</dfn>
+        </strong>{' '}
+        can mean:
+      </p>
       <ul className={styles.definitionList}>
-      {definitions.map((definition, index) => (
+        {definitions.map((definition, index) => (
           <li
             key={`definition-${index}`}
             className={styles.definitionItem}
             lang="swe"
             dangerouslySetInnerHTML={{
               __html: addAbbreviationsToContent(definition, abbreviations),
-            } }
+            }}
           />
-      ))}
+        ))}
       </ul>
 
-      <p>Possible runic inscription in <em>Medieval Futhork</em>:
-        <span className={styles.rune}>{ lettersToRunes(headword) }</span><br />
-      <small>Medieval Runes were used in Denmark from 12th to 17th centuries.</small>
+      <p>
+        Possible runic inscription in <em>Medieval Futhork</em>:
+        <span className={styles.rune}>{lettersToRunes(headword)}</span>
+        <br />
+        <small>
+          Medieval Runes were used in Denmark from 12th to 17th centuries.
+        </small>
       </p>
 
       <SimilarEntries entries={similarEntries} />
@@ -59,5 +72,5 @@ export default function WordDefinition({
       <br />
       <Crosslinks crosslinks={crosslinks} />
     </article>
-  )
+  );
 }

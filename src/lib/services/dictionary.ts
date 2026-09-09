@@ -1,69 +1,77 @@
-import { getDictionary } from 'old-danish-dictionary'
-import { slugifyWord, slugifyLetter } from '../utils/slugs'
-import type { OriginalDictionaryEntry, DictionaryEntry, DictionaryEntryDTO } from '../models/dictionary'
+import { getDictionary } from 'old-danish-dictionary';
+import { slugifyWord, slugifyLetter } from '../utils/slugs';
+import type {
+  OriginalDictionaryEntry,
+  DictionaryEntry,
+  DictionaryEntryDTO,
+} from '../models/dictionary';
 
-let cachedDictionary: DictionaryEntry[] | null = null
-let cachedInitialPages: string[] | null = null
+let cachedDictionary: DictionaryEntry[] | null = null;
+let cachedInitialPages: string[] | null = null;
 
 export interface AlphabetLetter {
-  letter: string,
-  slug: string,
+  letter: string;
+  slug: string;
 }
 
 const addSlugs = (words: OriginalDictionaryEntry[]): DictionaryEntry[] => {
-  const existingSlugs = {}
+  const existingSlugs = {};
 
   const formattedWords = words.map((word) => {
-    let slug = slugifyWord(word.headword).toLowerCase()
+    let slug = slugifyWord(word.headword).toLowerCase();
 
     if (existingSlugs[slug]) {
       // Double slug, make unique.
-      existingSlugs[slug] += 1
-      slug = `${slug}-${existingSlugs[slug]}`
+      existingSlugs[slug] += 1;
+      slug = `${slug}-${existingSlugs[slug]}`;
     } else {
-      existingSlugs[slug] = 1
+      existingSlugs[slug] = 1;
     }
 
     return {
       ...word,
       slug,
-    }
-  })
+    };
+  });
 
-  return formattedWords
-}
+  return formattedWords;
+};
 
 export const getAllWords = (): DictionaryEntry[] => {
-  if (cachedDictionary) return cachedDictionary
+  if (cachedDictionary) return cachedDictionary;
 
-  const words = getDictionary()
+  const words = getDictionary();
 
   /**
    * Add URL safe slugs.
    */
-  const formattedWords = addSlugs(words)
+  const formattedWords = addSlugs(words);
 
-  cachedDictionary = formattedWords
+  cachedDictionary = formattedWords;
 
-  return formattedWords
-}
+  return formattedWords;
+};
 
 export const getByLetter = (letter: string): DictionaryEntryDTO[] => {
-  const words = getAllWords()
+  const words = getAllWords();
   const byLetter = words
-    .filter((entry) => (
-      entry.headword.charAt(0).toLowerCase() === letter.toLowerCase()))
-    .map((entry) => ({ headword: entry.headword, slug: entry.slug }))
+    .filter(
+      (entry) =>
+        entry.headword.charAt(0).toLowerCase() === letter.toLowerCase(),
+    )
+    .map((entry) => ({ headword: entry.headword, slug: entry.slug }));
 
-  return byLetter
-}
+  return byLetter;
+};
 
-export const getWord = (word: string): DictionaryEntry => (
-  getAllWords().filter((entry) => entry.slug === word)[0]
-)
+export const getWord = (word: string): DictionaryEntry =>
+  getAllWords().filter((entry) => entry.slug === word)[0];
 
-export const getSimilarWords = (entry: DictionaryEntry): DictionaryEntry[] => getAllWords()
-  .filter((dEntry) => dEntry.headword === entry.headword && dEntry.slug !== entry.slug)
+export const getSimilarWords = (entry: DictionaryEntry): DictionaryEntry[] =>
+  getAllWords().filter(
+    (dEntry) =>
+      dEntry.headword === entry.headword && dEntry.slug !== entry.slug,
+  );
 
 export const getAlphabet = (): AlphabetLetter[] => {
   // Outputted from dictionary src with scripts/output-alphabet.js
@@ -92,15 +100,15 @@ export const getAlphabet = (): AlphabetLetter[] => {
     'y',
     'æ',
     'ø',
-  ]
+  ];
 
   const formattedLetters = letters.map((letter) => ({
     letter,
     slug: slugifyLetter(letter),
-  }))
+  }));
 
-  return formattedLetters
-}
+  return formattedLetters;
+};
 
 /**
  * Initial word pages to build are basically 6000
@@ -108,12 +116,12 @@ export const getAlphabet = (): AlphabetLetter[] => {
  * can not be deployed in one go.
  */
 export const getInitialWordsToBuild = (): string[] => {
-  if (cachedInitialPages) return cachedInitialPages
-  const allWords = getAllWords()
-  const result: string[] = []
+  if (cachedInitialPages) return cachedInitialPages;
+  const allWords = getAllWords();
+  const result: string[] = [];
   for (let i = 0; i < allWords.length; i += 8) {
     result.push(allWords[i].slug);
   }
-  cachedInitialPages = result
-  return cachedInitialPages
-}
+  cachedInitialPages = result;
+  return cachedInitialPages;
+};

@@ -1,40 +1,41 @@
-import { Crosslink } from 'lib/services/crosslinks'
-import ExternalLink from 'components/ExternalLink'
-import styles from './Crosslinks.module.scss'
+import { Crosslink } from 'lib/services/crosslinks';
+import ExternalLink from 'components/ExternalLink';
+import styles from './Crosslinks.module.scss';
 
 interface CrossLinkProps {
-  crosslinks: Crosslink[]
+  crosslinks: Crosslink[];
 }
 
 export default function Crosslinks({ crosslinks }: CrossLinkProps) {
   const getRelatedDictionaryName = (source: string): string => {
     if (source === 'old-norwegian') {
-      return 'Old Norwegian - Johan Fritzner\'s Dictionary'
+      return "Old Norwegian - Johan Fritzner's Dictionary";
     }
 
     if (source === 'old-norse') {
-      return 'Old Norse - Cleasby & Vigfusson Dictionary'
+      return 'Old Norse - Cleasby & Vigfusson Dictionary';
     }
 
     if (source === 'old-icelandic') {
-      return 'Old Icelandic - Geir Zoëga\'s Dictionary'
+      return "Old Icelandic - Geir Zoëga's Dictionary";
     }
 
     if (source === 'old-swedish') {
-      return 'Old Swedish - K.F Söderwall\'s Dictionary'
+      return "Old Swedish - K.F Söderwall's Dictionary";
     }
 
-    return ''
-  }
+    return '';
+  };
 
   if (crosslinks.length === 0) {
-    return null
+    return null;
   }
 
   return (
     <>
       <h4>Also available in related dictionaries:</h4>
-      <p>This headword also appears in dictionaries of other languages closely
+      <p>
+        This headword also appears in dictionaries of other languages closely
         related to Old Danish.
       </p>
       <ul className={styles.list}>
@@ -45,5 +46,5 @@ export default function Crosslinks({ crosslinks }: CrossLinkProps) {
         ))}
       </ul>
     </>
-  )
+  );
 }

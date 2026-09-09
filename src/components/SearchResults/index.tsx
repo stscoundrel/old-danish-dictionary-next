@@ -1,9 +1,9 @@
-import { SearchResult } from 'lib/services/search'
-import SearchTeaser from './SearchTeaser'
-import styles from './SearchResults.module.scss'
+import { SearchResult } from 'lib/services/search';
+import SearchTeaser from './SearchTeaser';
+import styles from './SearchResults.module.scss';
 
-interface SearchResultsProps{
-  words: SearchResult[]
+interface SearchResultsProps {
+  words: SearchResult[];
 }
 
 export default function SearchResults({ words }: SearchResultsProps) {
@@ -11,12 +11,12 @@ export default function SearchResults({ words }: SearchResultsProps) {
     <>
       <p className="blue">{words.length} results found</p>
       <ul className={styles.list}>
-        { words.map((word) => (
+        {words.map((word) => (
           <li key={word.slug}>
             <SearchTeaser data={word} />
           </li>
-        )) }
+        ))}
       </ul>
     </>
-  )
+  );
 }

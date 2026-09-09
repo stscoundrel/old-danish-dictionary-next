@@ -1,13 +1,13 @@
-import { BreadcrumbRequest, getBreadcrumbs } from 'lib/utils/breadcrumbs'
-import { getBreadcrumbsSchema } from 'lib/services/schema'
-import Link from 'next/link'
-import { DictionaryEntry } from 'lib/models/dictionary'
-import { AlphabetLetter } from 'lib/services/dictionary'
-import styles from './Breadcrumbs.module.scss'
+import { BreadcrumbRequest, getBreadcrumbs } from 'lib/utils/breadcrumbs';
+import { getBreadcrumbsSchema } from 'lib/services/schema';
+import Link from 'next/link';
+import { DictionaryEntry } from 'lib/models/dictionary';
+import { AlphabetLetter } from 'lib/services/dictionary';
+import styles from './Breadcrumbs.module.scss';
 
-interface BreadcrumbProps{
-  word: DictionaryEntry | null,
-  letter: AlphabetLetter | null
+interface BreadcrumbProps {
+  word: DictionaryEntry | null;
+  letter: AlphabetLetter | null;
 }
 
 export default function Breadcrumbs({ word, letter }: BreadcrumbProps) {
@@ -15,21 +15,21 @@ export default function Breadcrumbs({ word, letter }: BreadcrumbProps) {
     const request: BreadcrumbRequest = {
       word: null,
       letter: null,
-    }
+    };
 
     if (word) {
-      request.word = word.headword
+      request.word = word.headword;
     }
 
     if (letter) {
-      request.letter = letter.letter
+      request.letter = letter.letter;
     }
 
-    return request
-  }
+    return request;
+  };
 
-  const breadcrumbs = getBreadcrumbs(getBreadCrumbsRequest())
-  const schema = getBreadcrumbsSchema(breadcrumbs)
+  const breadcrumbs = getBreadcrumbs(getBreadCrumbsRequest());
+  const schema = getBreadcrumbsSchema(breadcrumbs);
 
   return (
     <nav className={styles.section}>
@@ -40,8 +40,11 @@ export default function Breadcrumbs({ word, letter }: BreadcrumbProps) {
           </Link>
         ))}
 
-        <script type='application/ld+json' dangerouslySetInnerHTML={ { __html: schema } }/>
+        <script
+          type="application/ld+json"
+          dangerouslySetInnerHTML={{ __html: schema }}
+        />
       </div>
     </nav>
-  )
+  );
 }
