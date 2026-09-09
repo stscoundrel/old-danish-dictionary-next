@@ -469,7 +469,8 @@ exports[`Word page: render & usage Matches snapshot 1`] = `
         </p>
       </header>
       <p>
-        The Old Danish word 
+        The Old Danish word
+         
         <strong>
           <dfn
             className="capitalize"
@@ -477,7 +478,8 @@ exports[`Word page: render & usage Matches snapshot 1`] = `
             Abe
           </dfn>
         </strong>
-         can mean:
+         
+        can mean:
       </p>
       <ul
         className="definitionList"
