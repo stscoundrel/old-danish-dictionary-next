@@ -1,6 +1,6 @@
-import { DictionaryEntry } from 'lib/models/dictionary'
-import renderer from 'react-test-renderer'
-import SimilarEntries from './index'
+import { DictionaryEntry } from 'lib/models/dictionary';
+import renderer from 'react-test-renderer';
+import SimilarEntries from './index';
 
 describe('Similar entries component', () => {
   const entries: DictionaryEntry[] = [
@@ -9,12 +9,10 @@ describe('Similar entries component', () => {
       definitions: [],
       slug: 'abe',
     },
-  ]
+  ];
 
   test('Matches the snapshot', () => {
-    const tree = renderer.create(
-      <SimilarEntries entries={entries} />,
-    ).toJSON()
-    expect(tree).toMatchSnapshot()
-  })
-})
+    const tree = renderer.create(<SimilarEntries entries={entries} />).toJSON();
+    expect(tree).toMatchSnapshot();
+  });
+});
