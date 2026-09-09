@@ -1,4 +1,4 @@
-export interface Abbreviation{
-    abbreviation: string,
-    explanation: string
+export interface Abbreviation {
+  abbreviation: string;
+  explanation: string;
 }

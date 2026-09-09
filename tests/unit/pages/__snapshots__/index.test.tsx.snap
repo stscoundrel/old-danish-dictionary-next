@@ -472,13 +472,15 @@ exports[`Index page Matches snapshot 1`] = `
           - Runic Danish 800 - 1100 (olddansk in Danish)
         </li>
         <li>
-          - Early Middle Danish 1100 - 1350 
+          - Early Middle Danish 1100 - 1350
+           
           <em>
             (yngre gammeldansk/middeldansk in Danish)
           </em>
         </li>
         <li>
-          - Late Middle Danish 1350 - 1525 
+          - Late Middle Danish 1350 - 1525
+           
           <em>
             (ældre gammeldansk/middeldansk in Danish)
           </em>
@@ -512,7 +514,9 @@ exports[`Index page Matches snapshot 1`] = `
           >
             bondæ
           </a>
-           annær 
+           
+          annær
+           
           <a
             href="/word/mand"
             onClick={[Function]}
@@ -521,7 +525,9 @@ exports[`Index page Matches snapshot 1`] = `
           >
             man
           </a>
-           mæth 
+           
+          mæth
+           
           <a
             href="/word/sin-2"
             onClick={[Function]}
@@ -566,7 +572,9 @@ exports[`Index page Matches snapshot 1`] = `
           >
             swa
           </a>
-           at 
+           
+          at
+           
           <a
             href="/word/han-2"
             onClick={[Function]}
@@ -584,7 +592,8 @@ exports[`Index page Matches snapshot 1`] = `
           >
             dræpær
           </a>
-           anti mannen [...]
+           
+          anti mannen [...]
         </em>
         <hr />
         <em>
