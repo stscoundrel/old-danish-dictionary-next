@@ -3,6 +3,10 @@ import { createMocks } from 'node-mocks-http';
 import sitemapHandler from 'pages/api/sitemap';
 
 describe('Sitemap  API endpoint', () => {
+  beforeAll(() => {
+    // Node streams require real scheduling APIs.
+    jest.useRealTimers();
+  });
   test('Should return xml sitemap', async () => {
     process.env.NEXT_PUBLIC_SITE_URL = 'https://old-danish-dictionary.test';
 

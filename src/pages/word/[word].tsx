@@ -28,7 +28,7 @@ import type { Crosslink } from 'scandinavian-dictionary-crosslinker';
 import { getCrossLinks } from 'lib/services/crosslinks';
 
 interface WordPageProps {
-  entry: DictionaryEntry;
+  entry: DictionaryEntry | null;
   similarEntries: DictionaryEntry[];
   letters: AlphabetLetter[];
   letter: AlphabetLetter;
