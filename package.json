@@ -20,8 +20,8 @@
     "jest": "jest --verbose --passWithNoTests",
     "test:unit": "npm run jest --",
     "test:coverage": "jest --coverage tests src/components --coverageThreshold='{\"global\":{\"statements\":\"90\", \"functions\":\"85\", \"branches\":\"75\", \"lines\":\"90\"}}'",
-    "create:alphabet": "ts-node scripts/output-alphabet.ts",
-    "revalidate": "ts-node scripts/revalidate.ts",
+    "create:alphabet": "tsx scripts/output-alphabet.ts",
+    "revalidate": "tsx scripts/revalidate.ts",
     "typecheck": "tsc --noEmit"
   },
   "dependencies": {
@@ -36,14 +36,13 @@
     "reset-css": "^5.0.2",
     "sass": "^1.98.0",
     "scandinavian-dictionary-crosslinker": "^0.7.0",
-    "sharp": "^0.35.4",
     "sitemap": "^7.1.1",
     "slugify": "^1.6.9",
     "teljari": "^1.1.1"
   },
   "devDependencies": {
     "@types/jest": "^30.0.0",
-    "@types/node": "^26.5.0",
+    "@types/node": "^24.19.2",
     "@types/react": "^19.3.0",
     "@types/react-dom": "^19.3.0",
     "@types/react-test-renderer": "^19.3.0",
@@ -54,7 +53,7 @@
     "node-mocks-http": "^1.17.2",
     "prettier": "^3.9.6",
     "react-test-renderer": "^19.3.0",
-    "ts-node": "^10.9.2",
-    "typescript": "^5.9.3"
+    "tsx": "^4.23.15",
+    "typescript": "^7.0.2"
   }
 }
