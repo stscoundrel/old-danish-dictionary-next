@@ -3,8 +3,7 @@ import renderer from 'react-test-renderer';
 import Search from './index';
 
 const mockHandler = jest.fn();
-const mockEvent = jest.fn();
-mockEvent.preventDefault = jest.fn();
+const mockEvent = { preventDefault: jest.fn() };
 
 /**
  * Mock router

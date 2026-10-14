@@ -2,6 +2,10 @@ import { createSitemap } from 'lib/services/sitemap';
 import { readFileSync } from 'node:fs';
 
 describe('Sitemap tests', () => {
+  beforeAll(() => {
+    // Node streams require real scheduling APIs.
+    jest.useRealTimers();
+  });
   process.env.NEXT_PUBLIC_SITE_URL = 'https://old-danish-dictionary.vercel.app';
 
   test('Sitemap content can be formatted to XML.', async () => {

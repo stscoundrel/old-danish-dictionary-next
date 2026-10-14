@@ -4,7 +4,7 @@ import styles from './WordLink.module.scss';
 
 interface WordLinkProps {
   data: DictionaryEntry | DictionaryEntryDTO;
-  useLowerCase: boolean;
+  useLowerCase?: boolean;
 }
 
 export default function WordLink({
