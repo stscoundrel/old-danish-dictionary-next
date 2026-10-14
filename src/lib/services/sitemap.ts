@@ -1,3 +1,4 @@
+import { Readable } from 'node:stream';
 import { getAllWords, getAlphabet } from 'lib/services/dictionary';
 import { getWordLink, getLetterLink } from 'lib/utils/links';
 import { SitemapStream, streamToPromise } from 'sitemap';
@@ -26,10 +27,9 @@ const formatSitemap = (content: SitemapEntry[]) => {
   const stream = new SitemapStream({
     hostname: process.env.NEXT_PUBLIC_SITE_URL,
   });
-  content.forEach((entry) => stream.write(entry));
-  stream.end();
-
-  return streamToPromise(stream).then((data) => data.toString());
+  return streamToPromise(Readable.from(content).pipe(stream)).then((data) =>
+    data.toString(),
+  );
 };
 
 const getSitemapEntries = (): SitemapEntry[] => {
