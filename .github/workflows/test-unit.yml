@@ -18,6 +18,7 @@ jobs:
       with:
         node-version: ${{ matrix.node-version }}
     - run: npm ci
-    - run: npm run test:unit
+    - run: npm run typecheck
+    - run: npm run test:coverage -- --runInBand --testTimeout=5000
       env:
         CI: true
