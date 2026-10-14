@@ -5,3 +5,5 @@ jest.setSystemTime(new Date(2024, 2, 21, 1, 1, 1, 1));
 jest.mock('next/router', () => require('next-router-mock'));
 
 export {}
+
+Object.assign(globalThis, { IS_REACT_ACT_ENVIRONMENT: true });

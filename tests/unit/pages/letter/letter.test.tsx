@@ -1,13 +1,10 @@
-import ReactDOM from 'react-dom/client';
+import { createRenderer, renderToDOM } from '../../../helpers/react';
 import Letter, { getStaticProps, getStaticPaths } from 'pages/letter/[letter]';
-import renderer from 'react-test-renderer';
 import { getByLetter, getAlphabet } from 'lib/services/dictionary';
 
 describe('Letter page: render', () => {
   test('Does not crash', () => {
-    const div = document.createElement('div');
-    const root = ReactDOM.createRoot(div);
-    root.render(
+    renderToDOM(
       <Letter
         words={getByLetter('e')}
         letters={getAlphabet()}
@@ -17,15 +14,13 @@ describe('Letter page: render', () => {
   });
 
   test('Matches snapshot', () => {
-    const tree = renderer
-      .create(
-        <Letter
-          words={getByLetter('e')}
-          letters={getAlphabet()}
-          letter={{ letter: 'e', slug: 'e' }}
-        />,
-      )
-      .toJSON();
+    const tree = createRenderer(
+      <Letter
+        words={getByLetter('e')}
+        letters={getAlphabet()}
+        letter={{ letter: 'e', slug: 'e' }}
+      />,
+    ).toJSON();
     expect(tree).toMatchSnapshot();
   });
 });

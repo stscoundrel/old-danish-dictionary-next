@@ -1,5 +1,4 @@
-import ReactDOM from 'react-dom/client';
-import renderer from 'react-test-renderer';
+import { createRenderer, renderToDOM } from '../../../tests/helpers/react';
 import WordList from './index';
 
 const entries = [
@@ -27,18 +26,16 @@ const entries = [
 
 describe('WordList component', () => {
   test('Does not crash', () => {
-    const div = document.createElement('div');
-    const root = ReactDOM.createRoot(div);
-    root.render(<WordList words={entries} />);
+    renderToDOM(<WordList words={entries} />);
   });
 
   test('Matches snapshot', () => {
-    const tree = renderer.create(<WordList words={entries} />).toJSON();
+    const tree = createRenderer(<WordList words={entries} />).toJSON();
     expect(tree).toMatchSnapshot();
   });
 
   test('Renders correct amount of words', () => {
-    const tree = renderer.create(<WordList words={entries} />);
+    const tree = createRenderer(<WordList words={entries} />);
     const { root } = tree;
 
     expect(root.findAllByType('ul').length).toEqual(1);

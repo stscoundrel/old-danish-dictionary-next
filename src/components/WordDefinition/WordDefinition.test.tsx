@@ -1,6 +1,5 @@
+import { createRenderer, renderToDOM } from '../../../tests/helpers/react';
 import { DictionaryEntry } from 'lib/models/dictionary';
-import ReactDOM from 'react-dom/client';
-import renderer from 'react-test-renderer';
 import {
   Crosslink,
   DictionarySource,
@@ -35,9 +34,7 @@ const crosslinks: Crosslink[] = [
 
 describe('WordDefinition component', () => {
   test('Does not crash', () => {
-    const div = document.createElement('div');
-    const root = ReactDOM.createRoot(div);
-    root.render(
+    renderToDOM(
       <WordDefinition
         entry={entry}
         abbreviations={abbreviations}
@@ -48,21 +45,19 @@ describe('WordDefinition component', () => {
   });
 
   test('Matches snapshot', () => {
-    const tree = renderer
-      .create(
-        <WordDefinition
-          entry={entry}
-          similarEntries={[entry]}
-          abbreviations={abbreviations}
-          crosslinks={crosslinks}
-        />,
-      )
-      .toJSON();
+    const tree = createRenderer(
+      <WordDefinition
+        entry={entry}
+        similarEntries={[entry]}
+        abbreviations={abbreviations}
+        crosslinks={crosslinks}
+      />,
+    ).toJSON();
     expect(tree).toMatchSnapshot();
   });
 
   test('Has correct title', () => {
-    const tree = renderer.create(
+    const tree = createRenderer(
       <WordDefinition
         entry={entry}
         similarEntries={[entry]}

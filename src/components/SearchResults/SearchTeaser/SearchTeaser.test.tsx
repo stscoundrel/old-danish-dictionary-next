@@ -1,5 +1,4 @@
-import ReactDOM from 'react-dom/client';
-import renderer from 'react-test-renderer';
+import { createRenderer, renderToDOM } from '../../../../tests/helpers/react';
 import SearchTeaser from './index';
 
 const result = {
@@ -18,18 +17,16 @@ const result = {
 
 describe('Search teaser component', () => {
   test('Does not crash', () => {
-    const div = document.createElement('div');
-    const root = ReactDOM.createRoot(div);
-    root.render(<SearchTeaser data={result} />);
+    renderToDOM(<SearchTeaser data={result} />);
   });
 
   test('Matches snapshot', () => {
-    const tree = renderer.create(<SearchTeaser data={result} />).toJSON();
+    const tree = createRenderer(<SearchTeaser data={result} />).toJSON();
     expect(tree).toMatchSnapshot();
   });
 
   test('Has correct label', () => {
-    const tree = renderer.create(<SearchTeaser data={result} />);
+    const tree = createRenderer(<SearchTeaser data={result} />);
     const { root } = tree;
 
     expect(root.findByType('a').children).toEqual([result.headword]);
