@@ -1,3 +1,4 @@
+import type { ReactNode } from 'react';
 // Components.
 import Head from 'components/Head';
 import Footer from 'components/Footer';
@@ -14,7 +15,7 @@ interface LayoutProps {
   words: DictionaryEntry[] | DictionaryEntryDTO[];
   letters: AlphabetLetter[];
   letter: AlphabetLetter | null;
-  children: JSX.Element | JSX.Element[];
+  children: ReactNode;
 }
 
 export default function Layout({

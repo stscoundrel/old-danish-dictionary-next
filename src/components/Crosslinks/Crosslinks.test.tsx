@@ -1,4 +1,4 @@
-import renderer from 'react-test-renderer';
+import { createRenderer } from '../../../tests/helpers/react';
 import { Crosslink } from 'lib/services/crosslinks';
 import { DictionarySource } from 'scandinavian-dictionary-crosslinker';
 import Crosslinks from './index';
@@ -21,14 +21,14 @@ describe('Crosslinks component', () => {
   ];
 
   test('Matches the snapshot', () => {
-    const tree = renderer
-      .create(<Crosslinks crosslinks={crosslinks} />)
-      .toJSON();
+    const tree = createRenderer(
+      <Crosslinks crosslinks={crosslinks} />,
+    ).toJSON();
     expect(tree).toMatchSnapshot();
   });
 
   test('Has correct amount of crosslinks', () => {
-    const tree = renderer.create(<Crosslinks crosslinks={crosslinks} />);
+    const tree = createRenderer(<Crosslinks crosslinks={crosslinks} />);
     const { root } = tree;
 
     expect(root.findAllByProps({ className: styles.listItem }).length).toEqual(
@@ -37,7 +37,7 @@ describe('Crosslinks component', () => {
   });
 
   test('Has expected crosslink content', () => {
-    const tree = renderer.create(<Crosslinks crosslinks={crosslinks} />);
+    const tree = createRenderer(<Crosslinks crosslinks={crosslinks} />);
 
     expect(JSON.stringify(tree)).toContain(
       'Old Norse - Cleasby & Vigfusson Dictionary',

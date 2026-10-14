@@ -1,17 +1,14 @@
-import ReactDOM from 'react-dom/client';
+import { createRenderer, renderToDOM } from '../../helpers/react';
 import Index, { getStaticProps } from 'pages/index';
-import renderer from 'react-test-renderer';
 import { getAlphabet } from 'lib/services/dictionary';
 
 describe('Index page', () => {
   test('Does not crash', () => {
-    const div = document.createElement('div');
-    const root = ReactDOM.createRoot(div);
-    root.render(<Index letters={getAlphabet()} />);
+    renderToDOM(<Index letters={getAlphabet()} />);
   });
 
   test('Matches snapshot', () => {
-    const tree = renderer.create(<Index letters={getAlphabet()} />).toJSON();
+    const tree = createRenderer(<Index letters={getAlphabet()} />).toJSON();
     expect(tree).toMatchSnapshot();
   });
 });

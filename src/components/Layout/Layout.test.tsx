@@ -1,6 +1,5 @@
-import ReactDOM from 'react-dom/client';
+import { createRenderer, renderToDOM } from '../../../tests/helpers/react';
 import Layout from 'components/Layout';
-import renderer from 'react-test-renderer';
 import { getByLetter, getWord, getAlphabet } from 'lib/services/dictionary';
 import { ContentType } from 'lib/models/content-types';
 
@@ -10,9 +9,7 @@ describe('Layout component', () => {
     const letters = getAlphabet();
 
     test('Does not crash', () => {
-      const div = document.createElement('div');
-      const root = ReactDOM.createRoot(div);
-      root.render(
+      renderToDOM(
         <Layout
           words={aWords}
           word={null}
@@ -26,19 +23,17 @@ describe('Layout component', () => {
     });
 
     test('Matches snapshot', () => {
-      const tree = renderer
-        .create(
-          <Layout
-            words={aWords}
-            word={null}
-            type={ContentType.Letter}
-            letters={letters}
-            letter={letters[0]}
-          >
-            <p>Content</p>
-          </Layout>,
-        )
-        .toJSON();
+      const tree = createRenderer(
+        <Layout
+          words={aWords}
+          word={null}
+          type={ContentType.Letter}
+          letters={letters}
+          letter={letters[0]}
+        >
+          <p>Content</p>
+        </Layout>,
+      ).toJSON();
       expect(tree).toMatchSnapshot();
     });
   });
@@ -48,9 +43,7 @@ describe('Layout component', () => {
     const letters = getAlphabet();
 
     test('Does not crash', () => {
-      const div = document.createElement('div');
-      const root = ReactDOM.createRoot(div);
-      root.render(
+      renderToDOM(
         <Layout
           words={[]}
           word={word}
@@ -64,19 +57,17 @@ describe('Layout component', () => {
     });
 
     test('Matches snapshot', () => {
-      const tree = renderer
-        .create(
-          <Layout
-            words={[]}
-            word={word}
-            type={ContentType.Word}
-            letters={letters}
-            letter={null}
-          >
-            <p>Content</p>
-          </Layout>,
-        )
-        .toJSON();
+      const tree = createRenderer(
+        <Layout
+          words={[]}
+          word={word}
+          type={ContentType.Word}
+          letters={letters}
+          letter={null}
+        >
+          <p>Content</p>
+        </Layout>,
+      ).toJSON();
       expect(tree).toMatchSnapshot();
     });
   });

@@ -11,6 +11,7 @@ exports[`WordList component Matches snapshot 1`] = `
       onClick={[Function]}
       onMouseEnter={[Function]}
       onTouchStart={[Function]}
+      ref={[Function]}
     >
       grønfugl
     </a>
@@ -22,6 +23,7 @@ exports[`WordList component Matches snapshot 1`] = `
       onClick={[Function]}
       onMouseEnter={[Function]}
       onTouchStart={[Function]}
+      ref={[Function]}
     >
       grønfugl 2
     </a>
@@ -33,6 +35,7 @@ exports[`WordList component Matches snapshot 1`] = `
       onClick={[Function]}
       onMouseEnter={[Function]}
       onTouchStart={[Function]}
+      ref={[Function]}
     >
       grønfugl 3
     </a>
@@ -44,6 +47,7 @@ exports[`WordList component Matches snapshot 1`] = `
       onClick={[Function]}
       onMouseEnter={[Function]}
       onTouchStart={[Function]}
+      ref={[Function]}
     >
       grønfugl 4
     </a>
