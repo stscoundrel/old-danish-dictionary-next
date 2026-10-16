@@ -1,5 +1,4 @@
 import { capitalize } from 'lib/utils/strings';
-import { lettersToRunes } from 'futhork';
 import { DictionaryEntry } from 'lib/models/dictionary';
 import { addAbbreviationsToContent } from 'lib/services/abbreviations/client';
 import Abbreviations from 'components/Abbreviations';
@@ -10,6 +9,7 @@ import Crosslinks from 'components/Crosslinks';
 import styles from './WordDefinition.module.scss';
 
 interface WordDefinitionProps {
+  runes: string;
   entry: DictionaryEntry;
   similarEntries: DictionaryEntry[];
   abbreviations: Abbreviation[];
@@ -17,6 +17,7 @@ interface WordDefinitionProps {
 }
 
 export default function WordDefinition({
+  runes,
   entry,
   similarEntries,
   abbreviations,
@@ -60,7 +61,7 @@ export default function WordDefinition({
 
       <p>
         Possible runic inscription in <em>Medieval Futhork</em>:
-        <span className={styles.rune}>{lettersToRunes(headword)}</span>
+        <span className={styles.rune}>{runes}</span>
         <br />
         <small>
           Medieval Runes were used in Denmark from 12th to 17th centuries.
