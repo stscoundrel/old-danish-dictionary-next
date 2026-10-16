@@ -48,6 +48,7 @@ describe('Word page: render & usage', () => {
   test('Does not crash', () => {
     renderToDOM(
       <Word
+        runes="ᛆᛒᚽ"
         entry={entry}
         similarEntries={[]}
         letters={getAlphabet()}
@@ -61,6 +62,7 @@ describe('Word page: render & usage', () => {
   test('Matches snapshot', () => {
     const tree = createRenderer(
       <Word
+        runes="ᛆᛒᚽ"
         entry={entry}
         similarEntries={[]}
         letters={getAlphabet()}
@@ -75,6 +77,7 @@ describe('Word page: render & usage', () => {
   test('Returns null if entry is unavailable', () => {
     const tree = createRenderer(
       <Word
+        runes="ᛆᛒᚽ"
         entry={null}
         similarEntries={[]}
         letters={getAlphabet()}
@@ -89,6 +92,7 @@ describe('Word page: render & usage', () => {
   test('Back button works', async () => {
     const tree = createRenderer(
       <Word
+        runes="ᛆᛒᚽ"
         entry={entry}
         similarEntries={[]}
         letters={getAlphabet()}
@@ -123,6 +127,7 @@ describe('Word page: data fetching', () => {
   test('getStaticProps works', async () => {
     const expected = {
       props: {
+        runes: 'ᛆᛒᚽ',
         entry,
         similarEntries: [
           {
@@ -150,6 +155,7 @@ describe('Word page: data fetching', () => {
   test('getStaticProps fetches crosslinks', async () => {
     const expected = {
       props: {
+        runes: 'ᚦᛆᚵ',
         entry: {
           headword: 'Dag',
           definitions: [

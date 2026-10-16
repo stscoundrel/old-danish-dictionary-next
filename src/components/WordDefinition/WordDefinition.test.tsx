@@ -36,6 +36,7 @@ describe('WordDefinition component', () => {
   test('Does not crash', () => {
     renderToDOM(
       <WordDefinition
+        runes="ᛆᛒᚽ"
         entry={entry}
         abbreviations={abbreviations}
         similarEntries={[entry]}
@@ -47,6 +48,7 @@ describe('WordDefinition component', () => {
   test('Matches snapshot', () => {
     const tree = createRenderer(
       <WordDefinition
+        runes="ᛆᛒᚽ"
         entry={entry}
         similarEntries={[entry]}
         abbreviations={abbreviations}
@@ -59,6 +61,7 @@ describe('WordDefinition component', () => {
   test('Has correct title', () => {
     const tree = createRenderer(
       <WordDefinition
+        runes="ᛆᛒᚽ"
         entry={entry}
         similarEntries={[entry]}
         abbreviations={abbreviations}
