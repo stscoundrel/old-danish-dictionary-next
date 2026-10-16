@@ -1,4 +1,5 @@
 import { useRouter } from 'next/router';
+import { medievalFuthork } from 'riimut';
 
 // Services.
 import {
@@ -28,6 +29,7 @@ import type { Crosslink } from 'scandinavian-dictionary-crosslinker';
 import { getCrossLinks } from 'lib/services/crosslinks';
 
 interface WordPageProps {
+  runes: string;
   entry: DictionaryEntry | null;
   similarEntries: DictionaryEntry[];
   letters: AlphabetLetter[];
@@ -99,9 +101,11 @@ export async function getStaticProps({
   )[0];
   const abbreviations = getAbbreviations(entry);
   const crosslinks = getCrossLinks(entry);
+  const runes = medievalFuthork.lettersToRunes(entry.headword);
 
   return {
     props: {
+      runes,
       entry,
       similarEntries,
       letter,
@@ -113,6 +117,7 @@ export async function getStaticProps({
 }
 
 export default function Word({
+  runes,
   entry,
   similarEntries = [],
   letters,
@@ -135,6 +140,7 @@ export default function Word({
       letter={letter}
     >
       <WordDefinition
+        runes={runes}
         entry={entry}
         similarEntries={similarEntries}
         abbreviations={abbreviations}
